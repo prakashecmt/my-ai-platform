@@ -2,7 +2,6 @@ require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
-const path = require("path");
 
 const connectDB = require("./config/db");
 
@@ -11,7 +10,7 @@ const connectDB = require("./config/db");
 connectDB();
 
 
-// Initialize Express
+// Initialize app
 const app = express();
 
 
@@ -27,36 +26,26 @@ const chatRoutes = require("./routes/chatRoutes");
 app.use("/api/chat", chatRoutes);
 
 
-// Static Frontend
-app.use(
-  express.static(
-    path.join(__dirname, "dist")
-  )
-);
-
-
-// API Test
+// Test Route
 app.get("/api/test", (req, res) => {
 
   res.json({
     success: true,
-    message: "Backend Working"
+    message: "Backend Working Successfully"
   });
 
 });
 
 
-// React Frontend Route
-app.use((req, res) => {
+// Root Route
+app.get("/", (req, res) => {
 
-  res.sendFile(
-    path.join(__dirname, "dist", "index.html")
-  );
+  res.send("AI Backend Running");
 
 });
 
 
-// PORT
+// Port
 const PORT = process.env.PORT || 5000;
 
 
