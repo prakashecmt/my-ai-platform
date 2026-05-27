@@ -1,8 +1,8 @@
 body {
+  margin: 0;
   font-family: Arial;
   background: #0f172a;
   color: white;
-  margin: 0;
 }
 
 .container {
@@ -22,17 +22,17 @@ body {
 .user {
   text-align: right;
   background: #2563eb;
-  padding: 8px;
+  padding: 10px;
   margin: 5px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .bot {
   text-align: left;
   background: #374151;
-  padding: 8px;
+  padding: 10px;
   margin: 5px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .input-box {
